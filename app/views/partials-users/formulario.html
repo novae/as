@@ -1,0 +1,81 @@
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
+
+        <div class="grid simple horizontal green">
+            
+            <div class="grid-title">
+                <h4 class="text-info">{{formInformation.action}}
+                    <span class="semi-bold">{{formInformation.resource}}</span>
+                </h4>
+
+            </div>
+            
+            <div class="grid-body">
+
+                <form role="form" name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+                    <!-- FORM-BODY -->
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                            <!-- Nombre -->
+                            <div class="form-group" ng-class="{'has-error' : userForm.nombre.$invalid && !userForm.nombre.$pristine}">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" name="nombre" class="form-control" ng-model="task.nombre" required>
+                                <p ng-show="userForm.nombre.$invalid && !userForm.nombre.$pristine" class="help-block">Este campo es obligatorio.</p>
+                            </div>
+                            <!-- username -->
+                            <div class="form-group" ng-class="{'has-error' : userForm.username.$invalid && !userForm.username.$pristine}">
+                                <label for="username">Alias</label>
+                                <input type="text" name="username" class="form-control" ng-model="task.username" required>
+                                <p ng-show="userForm.username.$invalid && !userForm.username.$pristine" class="help-block">Este campo es obligatorio.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                            <!-- Email -->
+                            <div class="form-group" ng-class="{'has-error': userForm.email.$invalid && !userForm.email.$pristine}">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" class="form-control" ng-model="task.email" required>
+                                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Ingresa un Email con un formato valido.</p>
+                                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block"> Este campo es obligatorio.</p>
+                            </div>
+                            <!-- pass -->
+                            <div class="form-group" ng-class="{'has-error' : userForm.pass.$invalid && !userForm.pass.$pristine}">
+                                <label for="pass">Contraseña</label>
+                                <input type="text" name="pass" class="form-control" ng-model="task.pass" required>
+                                <p ng-show="userForm.pass.$invalid && !userForm.pass.$pristine">Este campo es obligatorio.</p>
+                            </div>
+                            <!-- Confirm -->
+                            <div class="form-group" ng-class="{'has-error' : userForm.Confirm.$invalid && !userForm.Confirm.$pristine}">
+                                <label for="Confirm">Confirmación de contraseña</label>
+                                <input type="text" name="Confirm" class="form-control" ng-model="task.Confirm" required>
+                                <p ng-show="userForm.Confirm.$invalid && !userForm.Confirm.$pristine">Este campo es obligatorio.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FORM-FOOTER -->
+                    <div class="row">
+                        <div class="col-lg-5 col-lg-offset-7 col-md-5 col-md-offset-7 col-xs-5 col-xs-offset-7">
+                            
+                            <!-- SUBMIT -->
+                            <button class="btn btn-success btn-cons pull-right" type="submit" ng-disabled="userForm.$invalid">
+                                <i class="fa fa-check"></i>
+                                Agregar
+                            </button>
+                            
+                            <!-- CANCELAR -->
+                            <button class="btn btn-danger btn-cons pull-right" type="button">
+                                <i class="fa fa-times-circle"></i>
+                                Cancelar
+                            </button>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div><!-- Grid body -->
+
+        </div>
+
+
+    </div>
+</div>

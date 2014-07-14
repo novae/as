@@ -1,0 +1,68 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div data-aspect-ratio="true" class="row tiles-container tiles white" style="height: 580px;">
+
+        <div style="height:100%" class="col-md-7 b-grey b-r no-padding">
+            <div class="p-l-20 p-r-20 p-b-10 p-t-10 b-b b-grey">
+                <h5 class="text-success bold inline">Usuarios registrados</h5>
+
+                <div class="">
+                    <h1 class="text-error bold inline no-margin">{{count}}</h1>
+                </div>
+            </div>
+            <div>
+                <div ui-view>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-5 no-padding">
+
+            <div class="p-l-15 p-r-15 p-b-10 p-t-10 b-b b-grey">
+                <h4 class="text-black ">Buscar</h4>
+                <input type="text" placeholder="buscar usuario" id="txtinput2" class="dark form-control">
+            </div>
+
+            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 410px;">
+                <div data-always-visible="1" data-height="410px" class="scroller" style="overflow: hidden; width: auto; height: 410px;">
+
+                    <div class="tiles grey p-t-15 p-b-15 p-l-25 ">
+                        <h5 class="text-black semi-bold inline">Usuarios Registrados</h5>
+
+                        <a class="btn btn-success btn-cons inline pull-right" ng-click="addButton()">
+                            <i class="fa fa-plus"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="p-l-15 p-r-15 p-b-10 p-t-10 b-b b-grey">
+                        <div class="post overlap-left-10">
+                            <ul class="unstyle" ng-repeat="user in users">
+
+                                <li>
+                                    <div class="notification-messages info">
+                                        <div class="user-profile">
+                                            <img width="35" height="35" data-src-retina="assets/img/profiles/c2x.jpg" data-src="assets/img/profiles/c.jpg" alt="" src="assets/img/profiles/c.jpg">
+                                        </div>
+                                        <div class="message-wrapper">
+                                            <div class="heading"><strong>Nombre:</strong> {{user.nombre}}</div>
+                                            <div class="description">email: {{user.email}}</div>
+                                        </div>
+                                        <div class="date pull-right">some info</div>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

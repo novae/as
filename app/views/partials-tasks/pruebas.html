@@ -1,0 +1,31 @@
+<div class="grid simple " ng-show="goNew || goEdit">
+    <div class="grid-title">
+        <h4 ng-if="goNew">New Tasks</h4>
+        <h4 ng-if="goEdit">Edit Tasks</h4>
+            
+        </div>
+        <div class="grid-body">
+            <button ng-click="goCancelTask()" class="btn btn-default btn-cons" type="button">Cancelar</button>
+
+            <button ng-if="goNew" ng-click="goCreateTask()" class="btn btn-default btn-cons" type="button">Crear</button>
+
+            <button ng-if="goEdit" ng-click="goUpdateTask()" class="btn btn-default btn-cons" type="button">Actualizar</button>
+            <div class="input-group transparent">
+              <span class="input-group-addon ">
+                <i class="icon-instagram"></i>
+              </span>
+              <input placeholder="Username" class="form-control" type="text" ng-model="formData.nombre">
+            </div>
+              
+        </div>
+</div>
+ 
+<div class="grid simple" ng-show="!goNew && !goEdit">
+    
+        <div class="grid-body">
+           <button ng-click="goNewTask()" class="btn btn-default btn-cons" type="button">Nuevo</button>
+           <button ng-click="goEditTask()" class="btn btn-default btn-cons" type="button">Editar</button>
+              
+        </div>
+</div>
+ 

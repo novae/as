@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="tabbable tabs-left">
+            <ul id="tab-2" class="nav nav-tabs">
+                <li ng-class="active" class="active">
+                    <a ui-sref=".sinasignar">Sin Asignar
+             		<div class="progress ">
+                		<div class="progress-bar progress-bar-warning animate-progress-bar" data-percentage="42%" style="width: 42%;"></div>
+            		</div>
+            	</a>
+                </li>
+
+                <li ng-class="active" class="">
+                    <a ui-sref=".asignadas">Asignadas
+              		<div class="progress">
+                        <div class="progress-bar progress-bar-success animate-progress-bar" data-percentage="79%" style="width: 79%;"></div>
+                    </div>
+              	</a>
+                </li>
+
+                <li ng-class="active" class="">
+                    <a ui-sref=".cobradas">Cobradas
+              		<div class="progress">
+                        <div class="progress-bar progress-bar-danger animate-progress-bar" data-percentage="10%" style="width: 10%;"></div>
+                    </div>
+              	</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+               <div ui-view ng-class="MainCtrl"></div>
+
+           
+            </div>
+        </div>
+    </div>
+
+</div>

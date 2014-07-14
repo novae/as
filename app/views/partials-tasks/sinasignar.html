@@ -1,0 +1,114 @@
+<!-- UI-VIEW -->
+<div ui-view></div>
+<!-- UI-VIEW -->
+
+
+<div class="grid simple">
+    <!-- BEGIN TITLE -->
+    <div class="grid-title no-border">
+        <h3>Cuentas
+            <span class="semi-bold inline">Sin asignar</span>
+        </h3>
+
+    </div>
+    <!-- END TITLE -->
+
+    <!-- BEGIN BODY -->
+    <div class="grid-body no-border">
+        <div class="row-fluid">
+            
+            <div class="row">
+                <div class="pull-right">
+                    <button class="btn btn-success btn-cons inline" type="button" ng-click="addButton()">Agregar</button>
+
+                </div>
+            </div>
+
+            <div class="row">
+
+                <table class="table no-more-tables">
+                    <thead>
+                        <tr>
+                            <th style="width:6%">
+                                id
+                            </th>
+                            <th style="width:6%">Asignar</th>
+                            <th style="width:6%">Nombre</th>
+                            <th style="width:6%">Direccion</th>
+                            <th style="width:6%">Email</th>
+                            <th style="width:6%">Cantidad</th>
+                            <th style="width:6%">Editar</th>
+                            <th style="width:6%">Borrar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="task in tasks | filter:{ tarea_asignada: false } ">
+                            <td class="v-align-middle">{{task._id}}</td>
+
+                            <td class="v-align-middle">
+                                <div class="checkbox check-default">
+                                    <input type="checkbox" value="1" id="checkbox_{{task._id}}" name="task_isChecked" ng-model="task_isChecked" ng-change="ischecked(task._id, task_isChecked)">
+                                    <label for="checkbox_{{task._id}}"></label>
+                                </div>
+                            </td>
+
+                            <td class="v-align-middle">
+                                <span class="muted">{{task.nombre}}</span>
+                            </td>
+                            <td class="v-align-middle">
+                                <span class="muted">{{task.direccion}}</span>
+                            </td>
+                            <td>
+                                <span class="muted">{{task.email}}</span>
+                            </td>
+                            <td>
+                                <span class="muted">{{task.cantidad}}</span>
+                            </td>
+                            <td>
+                                <a style="display:block;" ng-click="editButton(task._id)">
+                                    <i class="fa fa-pencil-square-o"></i>
+                                </a>
+
+                            </td>
+                            <td>
+                                <a style="display:block;" ng-click="deleteTask(task._id)">
+                                    <i class="fa fa-trash-o"></i>
+                                </a>
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+                <!-- <select class="form-control" ng-model="user2.cobrador" ng-options="usuario.nombre for usuario in usuarios" required>
+                    <option value="">-- Elegir cobrador --</option>
+                </select> -->
+
+                <!-- <div ng-repeat="task in tasks">
+                    <a href="" ng-click="wtf(task._id)">{{ task.nombre }}</a>
+                </div> -->
+
+                <div class="btn-group pull-right "> 
+                    <a href="#" data-toggle="dropdown" class="btn btn-info dropdown-toggle btn-demo-space">Usuarios
+                        <span class="caret"></span> 
+                    </a>
+                    <ul class="dropdown-menu" ng-repeat="usuario in usuarios">
+                        <li><a href="" ng-click="getUser(usuario.nombre)">{{ usuario.nombre }}</a>
+                        </li>
+                    </ul>
+                </div>
+
+                
+                
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
